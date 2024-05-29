@@ -1,3 +1,5 @@
+import "./obrazek.css"
+
 export const Pose = ({ src }) => {
   return (
     <div>

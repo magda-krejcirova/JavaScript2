@@ -1,7 +1,7 @@
 import { render } from '@czechitas/render';
-import { Header } from '../components/header.jsx';
-import { Intro } from '../components/intro.jsx';
-import { Pose } from '../components/obrazek.jsx';
+import { Header } from '../components/header/header.jsx';
+import { Intro } from '../components/intro/intro.jsx';
+import { Pose } from '../components/obrazek/obrazek.jsx';
 import '../global.css';
 import './index.css';
 

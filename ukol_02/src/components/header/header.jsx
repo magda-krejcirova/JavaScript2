@@ -1,3 +1,5 @@
+import "./header.css"
+
 export const Header = ({ title }) => {
   return (
     <header>

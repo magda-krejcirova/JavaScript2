@@ -1,3 +1,5 @@
+import "./intro.css"
+
 export const Intro = ({ heading, text }) => {
   return (
     <div>
