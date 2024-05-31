@@ -1,0 +1,23 @@
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 10rem;
+  height: 10rem;
+  background-image: url(../img/rocket.svg);
+  background-size: contain;
+}
+.container {
+  display: flex;
+  max-width: 60rem;
+}
+
+.box {
+  width: 25%; /* Každý box zabírá 25% šířky kontejneru */
+  height: 180px; /* Nastavte výšku podle potřeby */
+  background-color: #e79696; /* Nastavte barvu pozadí podle potřeby */
+  margin: 0 10px; /* Přidejte odsazení mezi boxy */
+}
