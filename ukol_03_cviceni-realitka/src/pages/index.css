@@ -17,7 +17,14 @@ header {
 
 .box {
   width: 25%; /* Každý box zabírá 25% šířky kontejneru */
-  height: 180px; /* Nastavte výšku podle potřeby */
-  background-color: #e79696; /* Nastavte barvu pozadí podle potřeby */
+  height: 100%; /* Nastavte výšku podle potřeby */
+  background-color: #e91717; /* Nastavte barvu pozadí podle potřeby */
   margin: 0 10px; /* Přidejte odsazení mezi boxy */
+}
+
+body {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: left;
 }

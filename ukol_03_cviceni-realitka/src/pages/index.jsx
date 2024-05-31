@@ -5,41 +5,44 @@ import { Header } from '../components/header';
 import { Estate } from '../components/estate';
 
 const www = window.location.pathname
-console.log(www)
+const dum = Number(www.slice(5,6))
+let adresa = null
 
-const adresa = `https://apps.kodim.cz/daweb/trening-api/apis/realitka`+`${www}`
-console.log(adresa)
+const hodnota = () => {
+  if (dum === 1) { 
+    return adresa="https://apps.kodim.cz/daweb/trening-api/apis/realitka/dum01"
+  } 
+  else if (dum === 2) { 
+    return adresa="https://apps.kodim.cz/daweb/trening-api/apis/realitka/dum02"
+  }
+  else if (dum === 3) { 
+    return adresa="https://apps.kodim.cz/daweb/trening-api/apis/realitka/dum03"  
+  }
+  else if (dum === 4) { 
+    return adresa="https://apps.kodim.cz/daweb/trening-api/apis/realitka/dum04"
+  }
+}
 
-const response = await fetch({adresa})
+//const adresa = `https://apps.kodim.cz/daweb/trening-api/apis/realitka`+`${www}`
+
+const response = await fetch(hodnota())
 const data = await response.json()
 
 document.querySelector('#root').innerHTML = render(
   <div className="container">
     <div className="box">
-    <Header url="http://localhost:5173/dum01.html" />
+    <Header url="http://localhost:5173/dum01.html" popis="Nabídka exotiky " />
+    <Header url="http://localhost:5173/dum02.html" popis="Nabídka luxusu" />
+    <Header url="http://localhost:5173/dum03.html" popis="Nabídka budoucnosti" />
+    <Header url="http://localhost:5173/dum04.html" popis="Nabídka klidu" />
     </div>
-    
-    <div className="box">
-    <Header url="http://localhost:5173/dum02.html" />
-    </div>
-
-    <div className="box">
-    <Header title="Nabidka pro studenty"
-            url="http://localhost:5173/dum03.html"
-            popis="mnoho pokojovy dum c.3"/>
-    </div>        
-
-    <div className="box">
-    <Header title="Nabidka zahranicni nemovitosti"
-            url="http://localhost:5173/dum04.html"
-            popis="dum v exoticke oblasti c.4"/>
-    </div>
-    
+ 
+    <div className="body">
     <Estate title={data.title}
             text={data.text}
             price={data.price}
             city={data.city}
             contact={data.contact.email} />
-
+    </div>
   </div>
 );
