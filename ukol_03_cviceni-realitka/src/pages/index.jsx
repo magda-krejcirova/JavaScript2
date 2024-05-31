@@ -28,6 +28,12 @@ const hodnota = () => {
 const response = await fetch(hodnota())
 const data = await response.json()
 
+// destructurazlizaing
+const {title, text, price, city, contact} = data
+const { name, email, phone } = contact
+// title={data}
+// text=text
+
 document.querySelector('#root').innerHTML = render(
   <div className="container">
     <div className="box">
@@ -38,11 +44,13 @@ document.querySelector('#root').innerHTML = render(
     </div>
  
     <div className="body">
-    <Estate title={data.title}
-            text={data.text}
-            price={data.price}
-            city={data.city}
-            contact={data.contact.email} />
+    <Estate title={title}
+            text={text}
+            price={price}
+            city={city}
+            name={name}
+            email={email}
+            phone={phone} />
     </div>
   </div>
 );
